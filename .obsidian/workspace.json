@@ -18,21 +18,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "3a4d9c356220adc4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Obsidian/Testing.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -98,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Obsidian/Testing.md",
+                "file": "Obsidian/Welcome.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Obsidian/Testing.md",
+                "file": "Obsidian/Welcome.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Obsidian/Testing.md"
+                "file": "Obsidian/Welcome.md"
               }
             }
           }
@@ -159,16 +146,16 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "3a4d9c356220adc4",
+  "active": "1cad8e1b0b224f62",
   "lastOpenFiles": [
-    "Obsidian/Phone.md",
-    "Obsidian/Pepper spray.md",
-    "Obsidian/MVP+ and beyond mechanics.md",
-    "Obsidian/MVP Mechanics Requirement.md",
-    "Obsidian/HoldIMG.jpg",
     "Obsidian/GTAVPhone.jpg",
-    "Obsidian/Welcome.md",
+    "Obsidian/Phone.md",
     "Obsidian/Testing.md",
+    "Obsidian/MVP+ and beyond mechanics.md",
+    "Obsidian/HoldIMG.jpg",
+    "Obsidian/MVP Mechanics Requirement.md",
+    "Obsidian/Pepper spray.md",
+    "Obsidian/Welcome.md",
     "README.md"
   ]
 }
