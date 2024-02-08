@@ -1,0 +1,7 @@
+- More sound effects!
+	- Scream on TV in someones apartment
+	- Honking car
+	- Laughing pedestrian 
+	- Car alarm going off
+- Bonus texts if calls are not picked up
+- 

@@ -1,0 +1,42 @@
+
+
+- Tutorial discussion:
+	- Option 1: Fast easy, mvp scale
+		- Single displayed image appears with controls and emphasis on looming threats that player should be prepared for
+	- Option 2: Better, more immersive, larger scale
+		- Actual tutorial section where player is given control of the character and shown each action. Emphasis on preparation for looming threats
+		- Perhaps the main characters friend is giving them the tutorial in world. 
+- First person walking controls
+- First person camera/looking around
+- Pepper spray
+	- Look down and hold button to pull out spray
+	- Spray visibly held when out
+	- On click, shoots spray effect (only works while out)
+	- Cannot be held simultaneously with Phone
+	- Questions:
+		- Should we limit ammo?
+- Win/End Condition of unlocking door at the end of the level
+	- Some door at the end of the level that the player must unlock and when done the game is over.
+- Phone:
+	- Cannot be held simultaneously with Pepper Spray
+	- Receives phone calls
+		- Able to look down and hold button to answer phone
+		- Dialogue for player and npc written
+		- Dialogue for player and npc voice acted
+		- Event trigger in the level
+	- Receives texts on phone
+		- Able to look down and hold button to check text
+		- Dilogue for player and npc written
+		- Art on phone updates to show texts
+		- Questions:
+			- Should the player text back?
+			- Should the player hold the phone and have a back and forth or multiple checks? (prefer multiple checks)
+	- Questions:
+		- If the player gets a call while they have an unread message the call takes priority when picking up phone correct?
+- Main Menu
+	- Play Button
+	- Quit Button
+- Pause Menu
+	- Freezes game
+	- Resume Button
+	- Main Menu Button
