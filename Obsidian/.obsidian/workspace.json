@@ -4,18 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "33d46251fee2c93a",
+        "id": "06becc3170348009",
         "type": "tabs",
         "children": [
           {
-            "id": "11ce65c3a34d9a70",
+            "id": "929abde48bc6d5a4",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "Welcome.md",
-                "mode": "source",
-                "source": false
+                "file": "EnvironmentArt/Art_Ref/Art_Ref_TrashCan.canvas",
+                "viewState": {
+                  "x": 0,
+                  "y": 0,
+                  "zoom": 0
+                }
               }
             }
           }
@@ -85,7 +88,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Welcome.md",
+                "file": "EnvironmentArt/Art_Ref/Art_Ref_TrashCan_1.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +105,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Welcome.md",
+                "file": "EnvironmentArt/Art_Ref/Art_Ref_TrashCan_1.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +128,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Welcome.md"
+                "file": "EnvironmentArt/Art_Ref/Art_Ref_TrashCan_1.png"
               }
             }
           }
@@ -146,8 +149,18 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "11ce65c3a34d9a70",
+  "active": "929abde48bc6d5a4",
   "lastOpenFiles": [
-    "Welcome.md"
+    "EnvironmentArt/Art_Ref/Art_Ref_TrashCan_1.png",
+    "EnvironmentArt/Art_Ref/Art_Ref_TrashCan.canvas",
+    "Untitled.canvas",
+    "EnvironmentArt/Art_Ref/Art_Ref_TrashCan.md",
+    "EnvironmentArt/Art_Ref",
+    "EnvironmentArt",
+    "Welcome.md",
+    "MVP Mechanics Requirement.md",
+    "MVP+ and beyond mechanics.md",
+    "HoldIMG.jpg",
+    "GTAVPhone.jpg"
   ]
 }
