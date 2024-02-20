@@ -11,14 +11,9 @@
             "id": "929abde48bc6d5a4",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "image",
               "state": {
-                "file": "EnvironmentArt/Art_Ref/Art_Ref_TrashCan.canvas",
-                "viewState": {
-                  "x": 0,
-                  "y": 0,
-                  "zoom": 0
-                }
+                "file": "HoldIMG.jpg"
               }
             }
           }
@@ -88,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "EnvironmentArt/Art_Ref/Art_Ref_TrashCan_1.png",
+                "file": "HoldIMG.jpg",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "EnvironmentArt/Art_Ref/Art_Ref_TrashCan_1.png",
+                "file": "HoldIMG.jpg",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -128,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "EnvironmentArt/Art_Ref/Art_Ref_TrashCan_1.png"
+                "file": "HoldIMG.jpg"
               }
             }
           }
@@ -151,16 +146,18 @@
   },
   "active": "929abde48bc6d5a4",
   "lastOpenFiles": [
+    "GTAVPhone.jpg",
     "EnvironmentArt/Art_Ref/Art_Ref_TrashCan_1.png",
     "EnvironmentArt/Art_Ref/Art_Ref_TrashCan.canvas",
+    "HoldIMG.jpg",
+    "MVP Mechanics Requirement.md",
+    "MVP+ and beyond mechanics.md",
+    "Pepper spray.md",
+    "Phone.md",
+    "Welcome.md",
     "Untitled.canvas",
     "EnvironmentArt/Art_Ref/Art_Ref_TrashCan.md",
     "EnvironmentArt/Art_Ref",
-    "EnvironmentArt",
-    "Welcome.md",
-    "MVP Mechanics Requirement.md",
-    "MVP+ and beyond mechanics.md",
-    "HoldIMG.jpg",
-    "GTAVPhone.jpg"
+    "EnvironmentArt"
   ]
 }
