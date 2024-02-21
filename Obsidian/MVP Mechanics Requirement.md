@@ -9,8 +9,8 @@
 - First person walking controls
 - First person camera/looking around
 - Pepper spray
-	- Look down and hold button to pull out spray
-	- Spray visibly held when out
+	- Hold button to pull out spray
+	- Spray visible held when out
 	- On click, shoots spray effect (only works while out)
 	- Cannot be held simultaneously with Phone
 	- Questions:
@@ -25,8 +25,8 @@
 		- Dialogue for player and npc voice acted
 		- Event trigger in the level
 	- Receives texts on phone
-		- Able to look down and hold button to check text
-		- Dilogue for player and npc written
+		- Hold button to check text
+		- Dialogue for player and npc written
 		- Art on phone updates to show texts
 		- Questions:
 			- Should the player text back?
