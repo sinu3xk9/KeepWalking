@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Splines;
 
 [RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(Animator))]
 public class FPSController : MonoBehaviour
 {
     //Player Movement Variables
@@ -19,6 +20,7 @@ public class FPSController : MonoBehaviour
     public bool canMove = true;
 
     CharacterController characterController;
+    Animator playerAnimator;
 
     public SplineContainer spline;
     private int pointIndex;
@@ -35,6 +37,7 @@ public class FPSController : MonoBehaviour
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        playerAnimator = GetComponent<Animator>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
@@ -62,6 +65,10 @@ public class FPSController : MonoBehaviour
             {
                 pointIndex += 1;
             }
+            playerAnimator.SetBool("IsWalking", true);
+        }
+        else {
+            playerAnimator.SetBool("IsWalking", false);
         }
     }
 
