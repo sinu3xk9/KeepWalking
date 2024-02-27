@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Splines;
+using FMODUnity;
 
 [RequireComponent(typeof(CharacterController))]
 [RequireComponent(typeof(Animator))]
@@ -98,5 +99,10 @@ public class FPSController : MonoBehaviour
             phoneActive = false;
             pepperActive = false;
         }
+    }
+    
+    public void playerFootstep() 
+    {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.playerFootstep, transform.position);
     }
 }
