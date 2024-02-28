@@ -84,6 +84,7 @@ public class FPSController : MonoBehaviour
                 phoneActive = true;
                 pepperActive = false;
                 armAnimator.SetTrigger("AnswerCall");
+                Debug.Log("call");
             }
         }
         else if (!Input.GetKey(KeyCode.E) && Input.GetKey(KeyCode.Q))

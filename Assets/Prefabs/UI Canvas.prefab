@@ -498,8 +498,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  progressBarUI: {fileID: 3703053089551526737}
   progressBarTransform: {fileID: 7751959794291075249}
-  itemUseUI: {fileID: 3703053089551526737}
   phoneText: {fileID: 3404498897263694619}
   pepperText: {fileID: 4865883122250797019}
 --- !u!1 &9050360187981069339
