@@ -31,6 +31,7 @@ public class FPSController : MonoBehaviour
     public float useDuration = 75;
     public bool phoneActive = false;
     public bool pepperActive = false;
+    public Animator armAnimator;
 
     IState usage;
 
@@ -78,19 +79,21 @@ public class FPSController : MonoBehaviour
         if (Input.GetKey(KeyCode.E) && !Input.GetKey(KeyCode.Q))
         {
             useTick++;
-            if (useTick >= useDuration)
+            if (useTick == useDuration)
             {
                 phoneActive = true;
                 pepperActive = false;
+                armAnimator.SetTrigger("AnswerCall");
             }
         }
         else if (!Input.GetKey(KeyCode.E) && Input.GetKey(KeyCode.Q))
         {
             useTick++;
-            if (useTick >= useDuration)
+            if (useTick == useDuration)
             {
                 phoneActive = false;
                 pepperActive = true;
+                armAnimator.SetTrigger("GetOutPepperSpray");
             }
         }
         else
