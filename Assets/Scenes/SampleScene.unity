@@ -532,37 +532,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &942194594 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5740212841526181614, guid: 75a6683009c950441ace492578ff3a8d, type: 3}
-  m_PrefabInstance: {fileID: 3941200515922577714}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &942194597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 942194594}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac1e7da9d0a8753429d2bfed7f4102d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <playerFootstep>k__BackingField:
-    Guid:
-      Data1: 645806514
-      Data2: 1076723909
-      Data3: 1659984045
-      Data4: 2073843484
-    Path: event:/Footstep_Single
-  <ambienceTrack>k__BackingField:
-    Guid:
-      Data1: -559893738
-      Data2: 1235608419
-      Data3: 1312268987
-      Data4: -1313687505
-    Path: event:/Drone
 --- !u!1 &955066585
 GameObject:
   m_ObjectHideFlags: 0
@@ -1533,10 +1502,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5740212841526181614, guid: 75a6683009c950441ace492578ff3a8d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 942194597}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75a6683009c950441ace492578ff3a8d, type: 3}
 --- !u!1001 &9072750482257138393
 PrefabInstance:
