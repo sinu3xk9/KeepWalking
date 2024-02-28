@@ -4,6 +4,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Splines;
 using FMODUnity;
+using UnityEngine.UI;
+using TMPro;
 
 [RequireComponent(typeof(CharacterController))]
 [RequireComponent(typeof(Animator))]
@@ -33,6 +35,15 @@ public class FPSController : MonoBehaviour
     public bool pepperActive = false;
     public Animator armAnimator;
 
+    // UI 
+    [Header("UI")]
+    public Image pepperRadial;
+    public Image phoneRadial;
+    public TextMeshProUGUI q;
+    public TextMeshProUGUI e;
+    private Color darkGrey = new Color(0.32f, 0.32f, 0.32f, 256);
+    private Color lightGrey = new Color(0.71f, 0.71f, 0.71f, 256);
+    
     IState usage;
 
     // Start is called before the first frame update
@@ -76,9 +87,14 @@ public class FPSController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.E) && !Input.GetKey(KeyCode.Q))
+        //e.color = new Color(82, 82, 82);
+        //q.color = new Color(82, 82, 82);
+
+        if (Input.GetKey(KeyCode.E) && !Input.GetKey(KeyCode.Q) && !pepperActive)
         {
+            e.color = lightGrey;
             useTick++;
+            phoneRadial.fillAmount = useTick/useDuration;
             if (useTick == useDuration)
             {
                 phoneActive = true;
@@ -87,9 +103,11 @@ public class FPSController : MonoBehaviour
                 Debug.Log("call");
             }
         }
-        else if (!Input.GetKey(KeyCode.E) && Input.GetKey(KeyCode.Q))
+        else if (!Input.GetKey(KeyCode.E) && Input.GetKey(KeyCode.Q) && !phoneActive)
         {
+            q.color = lightGrey;
             useTick++;
+            pepperRadial.fillAmount = useTick/useDuration;
             if (useTick == useDuration)
             {
                 phoneActive = false;
@@ -99,9 +117,13 @@ public class FPSController : MonoBehaviour
         }
         else
         {
+            e.color = darkGrey;
+            q.color = darkGrey;
             useTick = 0;
             phoneActive = false;
             pepperActive = false;
+            phoneRadial.fillAmount = 0;
+            pepperRadial.fillAmount = 0;
         }
     }
     
