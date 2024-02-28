@@ -86,6 +86,10 @@ MonoBehaviour:
   phoneActive: 0
   pepperActive: 0
   armAnimator: {fileID: 5708768441454788316}
+  pepperRadial: {fileID: 0}
+  phoneRadial: {fileID: 0}
+  q: {fileID: 0}
+  e: {fileID: 0}
 --- !u!95 &8704819092791969862
 Animator:
   serializedVersion: 5
@@ -201,7 +205,6 @@ GameObject:
   - component: {fileID: 2908036654534654248}
   - component: {fileID: 1035684346307152007}
   - component: {fileID: 1360221890032931596}
-  - component: {fileID: 3378553739367228734}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -237,32 +240,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1360221890032931596
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5740212841526181614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac1e7da9d0a8753429d2bfed7f4102d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <playerFootstep>k__BackingField:
-    Guid:
-      Data1: 645806514
-      Data2: 1076723909
-      Data3: 1659984045
-      Data4: 2073843484
-    Path: event:/Footstep_Single
-  <ambienceTrack>k__BackingField:
-    Guid:
-      Data1: -559893738
-      Data2: 1235608419
-      Data3: 1312268987
-      Data4: -1313687505
-    Path: event:/Drone
---- !u!114 &3378553739367228734
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
