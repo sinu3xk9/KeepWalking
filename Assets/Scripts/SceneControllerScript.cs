@@ -16,13 +16,14 @@ public class SceneControllerScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (SceneManager.GetActiveScene() == SceneManager.GetSceneAt(0))
+            if (SceneManager.GetActiveScene().name == "MainMenu")
             {
+                Debug.Log("quitting whole game");
                 Application.Quit();
             }
             else
             {
-                SceneManager.LoadScene(0);
+                getSceneAtIndex(0);
             }
         }
     }

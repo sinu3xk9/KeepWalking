@@ -10962,6 +10962,50 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811423567}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &827582677
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 827582679}
+  - component: {fileID: 827582678}
+  m_Layer: 0
+  m_Name: SceneController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &827582678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827582677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93e53a2811757cd46aa9ad7e43cd8aaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &827582679
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827582677}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.5008392, y: 13.33, z: -9.973678}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &836476805
 GameObject:
   m_ObjectHideFlags: 0
@@ -26050,11 +26094,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2749160181024413745, guid: 75a6683009c950441ace492578ff3a8d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.05
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2749160181024413745, guid: 75a6683009c950441ace492578ff3a8d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -12.61
+      value: -12.187
       objectReference: {fileID: 0}
     - target: {fileID: 2749160181024413745, guid: 75a6683009c950441ace492578ff3a8d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -27606,3 +27650,4 @@ SceneRoots:
   - {fileID: 13541933}
   - {fileID: 1024504144}
   - {fileID: 1985444985}
+  - {fileID: 827582679}
