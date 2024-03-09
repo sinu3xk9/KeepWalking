@@ -34,6 +34,7 @@ public class FPSController : MonoBehaviour
     public bool phoneActive = false;
     public bool pepperActive = false;
     public Animator armAnimator;
+    public Animator pepperAnimator;
 
     // UI 
     [Header("UI")]
@@ -83,47 +84,54 @@ public class FPSController : MonoBehaviour
         else {
             playerAnimator.SetBool("IsWalking", false);
         }
-    }
-
-    private void FixedUpdate()
-    {
-        //e.color = new Color(82, 82, 82);
-        //q.color = new Color(82, 82, 82);
 
         if (Input.GetKey(KeyCode.E) && !Input.GetKey(KeyCode.Q) && !pepperActive)
         {
             e.color = lightGrey;
             useTick++;
-            phoneRadial.fillAmount = useTick/useDuration;
+            phoneRadial.fillAmount = useTick / useDuration;
             if (useTick == useDuration)
             {
                 phoneActive = true;
                 pepperActive = false;
-                armAnimator.SetTrigger("AnswerCall");
-                Debug.Log("call");
+                armAnimator.SetTrigger("TakeOutPhone");
             }
         }
         else if (!Input.GetKey(KeyCode.E) && Input.GetKey(KeyCode.Q) && !phoneActive)
         {
             q.color = lightGrey;
             useTick++;
-            pepperRadial.fillAmount = useTick/useDuration;
+            pepperRadial.fillAmount = useTick / useDuration;
             if (useTick == useDuration)
             {
                 phoneActive = false;
                 pepperActive = true;
-                armAnimator.SetTrigger("GetOutPepperSpray");
+                pepperAnimator.SetTrigger("TakeOutPepper");
             }
         }
         else
         {
-            e.color = darkGrey;
-            q.color = darkGrey;
             useTick = 0;
-            phoneActive = false;
+            phoneRadial.fillAmount = useTick / useDuration;
+            pepperRadial.fillAmount = useTick / useDuration;
+        }
+
+        if (!Input.GetKey(KeyCode.Q) && pepperActive)
+        {
+            pepperAnimator.SetTrigger("PutAwayPepper");
+            q.color = darkGrey;
             pepperActive = false;
-            phoneRadial.fillAmount = 0;
             pepperRadial.fillAmount = 0;
+            useTick = 0;
+        }
+
+        if (!Input.GetKey(KeyCode.E) && phoneActive)
+        {
+            armAnimator.SetTrigger("PutAwayPhone");
+            e.color = darkGrey;
+            phoneActive = false;
+            phoneRadial.fillAmount = 0;
+            useTick = 0;
         }
     }
     
