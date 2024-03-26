@@ -26072,6 +26072,10 @@ PrefabInstance:
       propertyPath: pepperRadial
       value: 
       objectReference: {fileID: 255969476}
+    - target: {fileID: 847518743472598245, guid: 75a6683009c950441ace492578ff3a8d, type: 3}
+      propertyPath: m_Name
+      value: Main Camera
+      objectReference: {fileID: 0}
     - target: {fileID: 868201761514312296, guid: 75a6683009c950441ace492578ff3a8d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 11.1778965
