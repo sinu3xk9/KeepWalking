@@ -325,7 +325,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3961264527716349181}
   m_Layer: 0
-  m_Name: SM_Street
+  m_Name: SM_Street_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
