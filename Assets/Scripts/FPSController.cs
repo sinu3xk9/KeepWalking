@@ -6,6 +6,7 @@ using UnityEngine.Splines;
 using FMODUnity;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.TextCore.Text;
 
 [RequireComponent(typeof(CharacterController))]
 [RequireComponent(typeof(Animator))]
@@ -55,7 +56,6 @@ public class FPSController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-
         transform.position = spline.Spline[pointIndex].Position;
     }
 
@@ -63,6 +63,24 @@ public class FPSController : MonoBehaviour
     void Update()
     {
         //Player Movement
+        moveDirection = Vector3.zero;
+        if (Input.GetKey(KeyCode.W))
+        {
+            moveDirection = (transform.TransformDirection(Vector3.forward) * lookSpeed);
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            moveDirection = (transform.TransformDirection(Vector3.left) * lookSpeed);
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            moveDirection = (transform.TransformDirection(Vector3.right) * lookSpeed);
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            moveDirection = (transform.TransformDirection(Vector3.back) * lookSpeed);
+        }
+
         characterController.Move(moveDirection * Time.deltaTime);
 
         if (canMove)
@@ -71,15 +89,24 @@ public class FPSController : MonoBehaviour
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
+            //playerRB.velocity = gameObject.transform.forward * walkSpeed;
         }
-        if (pointIndex <= spline.Spline.Count - 1 && Input.GetKey(KeyCode.W))
+        if (pointIndex <= spline.Spline.Count - 1)
         {
-            transform.position = Vector3.MoveTowards(transform.position, spline.Spline[pointIndex].Position, walkSpeed * Time.deltaTime);
-            if (transform.position == new Vector3(spline.Spline[pointIndex].Position.x, spline.Spline[pointIndex].Position.y, spline.Spline[pointIndex].Position.z))
+            Vector3 splineCurrent = spline.Spline[pointIndex].Position;
+            Vector3 splineNext = spline.Spline[pointIndex + 1].Position;
+
+            if ((transform.position - splineNext).magnitude < (transform.position - splineCurrent).magnitude)
             {
-                pointIndex += 1;
+                pointIndex++;
             }
+            //transform.position = Vector3.MoveTowards(transform.position, spline.Spline[pointIndex].Position, walkSpeed * Time.deltaTime);
+            //if (transform.position == new Vector3(spline.Spline[pointIndex].Position.x, spline.Spline[pointIndex].Position.y, spline.Spline[pointIndex].Position.z))
+            //{
+            //    pointIndex += 1;
+            //}
             playerAnimator.SetBool("IsWalking", true);
+            Debug.Log(pointIndex);
         }
         else {
             playerAnimator.SetBool("IsWalking", false);
