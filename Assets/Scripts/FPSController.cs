@@ -21,7 +21,7 @@ public class FPSController : MonoBehaviour
     Vector3 moveDirection = Vector3.zero;
     float rotationX = 0;
 
-    public bool canMove = true;
+    public bool canLook = true;
 
     CharacterController characterController;
     Animator playerAnimator;
@@ -34,6 +34,9 @@ public class FPSController : MonoBehaviour
     public float useDuration = 75;
     public bool phoneActive = false;
     public bool pepperActive = false;
+    private Vector3 splineCurrent;
+    private Vector3 splineNext;
+    private float movementEllipseRadius = 2f;
     public Animator armAnimator;
     public Animator pepperAnimator;
 
@@ -62,28 +65,52 @@ public class FPSController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Update spline progress
+        if (pointIndex <= spline.Spline.Count - 1)
+        {
+            splineCurrent = spline.Spline[pointIndex].Position;
+            splineNext = spline.Spline[pointIndex + 1].Position;
+
+            if ((transform.position - splineNext).magnitude < (transform.position - splineCurrent).magnitude/2)
+            {
+                pointIndex++;
+            }
+            Debug.Log(pointIndex);
+        }
         //Player Movement
         moveDirection = Vector3.zero;
+        //checks if combined distance to current and next point (ellipse math) is greater than threshold
+        if (((transform.position - splineNext).magnitude + (transform.position - splineCurrent).magnitude) > ((splineNext - splineCurrent).magnitude + movementEllipseRadius))
+        {
+            Debug.Log("Outisde Ellipse");
+            Debug.Log(splineCurrent.ToString());
+            Debug.Log(splineNext.ToString());
+            //if outside threshold get the point between current and next spline and move player towards that point
+            Vector3 middlePoint = splineCurrent + ((splineNext- splineCurrent)/6);
+            Debug.Log(middlePoint.ToString());
+            moveDirection += (middlePoint - transform.position);
+            moveDirection = new Vector3(moveDirection.x, 0, moveDirection.z);
+        }
         if (Input.GetKey(KeyCode.W))
         {
-            moveDirection = (transform.TransformDirection(Vector3.forward) * lookSpeed);
+            moveDirection += (transform.TransformDirection(Vector3.forward) * lookSpeed);
         }
         if (Input.GetKey(KeyCode.A))
         {
-            moveDirection = (transform.TransformDirection(Vector3.left) * lookSpeed);
+            moveDirection += (transform.TransformDirection(Vector3.left) * lookSpeed);
         }
         if (Input.GetKey(KeyCode.D))
         {
-            moveDirection = (transform.TransformDirection(Vector3.right) * lookSpeed);
+            moveDirection += (transform.TransformDirection(Vector3.right) * lookSpeed);
         }
         if (Input.GetKey(KeyCode.S))
         {
-            moveDirection = (transform.TransformDirection(Vector3.back) * lookSpeed);
+            moveDirection += (transform.TransformDirection(Vector3.back) * lookSpeed);
         }
 
         characterController.Move(moveDirection * Time.deltaTime);
 
-        if (canMove)
+        if (canLook)
         {
             rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
@@ -91,22 +118,9 @@ public class FPSController : MonoBehaviour
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
             //playerRB.velocity = gameObject.transform.forward * walkSpeed;
         }
-        if (pointIndex <= spline.Spline.Count - 1)
+        if (Mathf.Abs(characterController.velocity.x) > .1f || Mathf.Abs(characterController.velocity.z) > .1f)
         {
-            Vector3 splineCurrent = spline.Spline[pointIndex].Position;
-            Vector3 splineNext = spline.Spline[pointIndex + 1].Position;
-
-            if ((transform.position - splineNext).magnitude < (transform.position - splineCurrent).magnitude)
-            {
-                pointIndex++;
-            }
-            //transform.position = Vector3.MoveTowards(transform.position, spline.Spline[pointIndex].Position, walkSpeed * Time.deltaTime);
-            //if (transform.position == new Vector3(spline.Spline[pointIndex].Position.x, spline.Spline[pointIndex].Position.y, spline.Spline[pointIndex].Position.z))
-            //{
-            //    pointIndex += 1;
-            //}
-            playerAnimator.SetBool("IsWalking", true);
-            Debug.Log(pointIndex);
+            //playerAnimator.SetBool("IsWalking", true);
         }
         else {
             playerAnimator.SetBool("IsWalking", false);
