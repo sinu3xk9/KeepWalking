@@ -120,7 +120,7 @@ public class FPSController : MonoBehaviour
         }
         if (Mathf.Abs(characterController.velocity.x) > .1f || Mathf.Abs(characterController.velocity.z) > .1f)
         {
-            //playerAnimator.SetBool("IsWalking", true);
+            playerAnimator.SetBool("IsWalking", true);
         }
         else {
             playerAnimator.SetBool("IsWalking", false);
