@@ -14,7 +14,18 @@ public class SceneControllerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (SceneManager.GetActiveScene().name == "MainMenu")
+            {
+                Debug.Log("quitting whole game");
+                Application.Quit();
+            }
+            else
+            {
+                getSceneAtIndex(0);
+            }
+        }
     }
 
     public void getSceneAtIndex(int index)
