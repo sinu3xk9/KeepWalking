@@ -13,13 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Obsidian/Welcome.md",
+                "file": "Obsidian/MVP Mechanics Requirement.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "9edcbe5d832191f9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Obsidian/Finalized Mechanics MVP.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Obsidian/Welcome.md",
+                "file": "Obsidian/Finalized Mechanics MVP.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Obsidian/Welcome.md",
+                "file": "Obsidian/Finalized Mechanics MVP.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Obsidian/Welcome.md"
+                "file": "Obsidian/Finalized Mechanics MVP.md"
               }
             }
           }
@@ -146,16 +159,19 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "1cad8e1b0b224f62",
+  "active": "9edcbe5d832191f9",
   "lastOpenFiles": [
+    "Obsidian/MVP+ and beyond mechanics.md",
+    "Obsidian/MVP Mechanics Requirement.md",
+    "Obsidian/Finalized Mechanics MVP.md",
+    "Obsidian/Events.md",
+    "Pasted image 20240403194426.png",
+    "Obsidian/HoldIMG.jpg",
     "Obsidian/GTAVPhone.jpg",
     "Obsidian/Phone.md",
-    "Obsidian/Testing.md",
-    "Obsidian/MVP+ and beyond mechanics.md",
-    "Obsidian/HoldIMG.jpg",
-    "Obsidian/MVP Mechanics Requirement.md",
-    "Obsidian/Pepper spray.md",
     "Obsidian/Welcome.md",
+    "Obsidian/Testing.md",
+    "Obsidian/Pepper spray.md",
     "README.md"
   ]
 }
