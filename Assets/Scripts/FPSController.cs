@@ -34,11 +34,13 @@ public class FPSController : MonoBehaviour
     public float useDuration = 75;
     public bool phoneActive = false;
     public bool pepperActive = false;
+    private Vector3 splinePrev;
     private Vector3 splineCurrent;
     private Vector3 splineNext;
     private float movementEllipseRadius = 2f;
     public Animator armAnimator;
     public Animator pepperAnimator;
+
 
     // UI 
     [Header("UI")]
@@ -48,6 +50,14 @@ public class FPSController : MonoBehaviour
     public TextMeshProUGUI e;
     private Color darkGrey = new Color(0.32f, 0.32f, 0.32f, 256);
     private Color lightGrey = new Color(0.71f, 0.71f, 0.71f, 256);
+
+    // Audio
+    [Header("Audio")]
+    [Range(0.0f, 1.0f)]
+    public float stepChance;
+    [Range(0.0f, 1.0f)]
+    public float stopStepChance;
+    private Vector3 feetDifferential = new Vector3(0f, .6f, 0f);
     
     IState usage;
 
@@ -60,6 +70,7 @@ public class FPSController : MonoBehaviour
         Cursor.visible = false;
 
         transform.position = spline.Spline[pointIndex].Position;
+        splinePrev = spline.Spline[pointIndex].Position;
     }
 
     // Update is called once per frame
@@ -74,6 +85,7 @@ public class FPSController : MonoBehaviour
             if ((transform.position - splineNext).magnitude < (transform.position - splineCurrent).magnitude/2)
             {
                 pointIndex++;
+                splinePrev = splineCurrent;
             }
             Debug.Log(pointIndex);
         }
@@ -178,6 +190,24 @@ public class FPSController : MonoBehaviour
     
     public void playerFootstep() 
     {
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.playerFootstep, transform.position);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.playerFootstep, transform.position - feetDifferential);
+        if(Random.value <= stepChance) {
+            StartCoroutine(FollowFootstep());
+        }
+    }
+
+    public void stopWalking()
+    {
+        if(Random.value <= stopStepChance) {
+            StartCoroutine(FollowFootstep());
+        }
+    }
+
+    IEnumerator FollowFootstep() {
+        var soundPosition = transform.position + splineCurrent;
+        soundPosition /= 2;
+        soundPosition -= feetDifferential;
+        yield return new WaitForSeconds(.5f);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.followFootstep, soundPosition);
     }
 }
