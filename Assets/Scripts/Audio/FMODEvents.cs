@@ -12,9 +12,6 @@ public class FMODEvents : MonoBehaviour
     [field: Header("Ambiences")]
     [field: SerializeField] public EventReference ambienceTrack {get; private set;}
 
-    [field: Header("Environment Sounds")]
-    [field: SerializeField] public EventReference followFootstep {get; private set;}
-
 
 
    public static FMODEvents instance {get; private set;}
