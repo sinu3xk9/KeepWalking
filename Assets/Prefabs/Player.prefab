@@ -236,19 +236,20 @@ MonoBehaviour:
   walkSpeed: 5
   lookSpeed: 1
   lookXLimit: 45
-  canMove: 1
-  playerRB: {fileID: 7127998600411357953}
+  canLook: 1
   spline: {fileID: 0}
   useTick: 0
-  useDuration: 500
-  phoneActive: 0
-  pepperActive: 0
+  holdTickSpeed: 150
+  useDuration: 400
   armAnimator: {fileID: 8380217524618379979}
   pepperAnimator: {fileID: 6148639878726612606}
+  state: idle
   pepperRadial: {fileID: 0}
   phoneRadial: {fileID: 0}
   q: {fileID: 0}
   e: {fileID: 0}
+  stepChance: 0
+  stopStepChance: 0
 --- !u!95 &8704819092791969862
 Animator:
   serializedVersion: 5
@@ -452,6 +453,13 @@ MonoBehaviour:
       Data3: 1312268987
       Data4: -1313687505
     Path: event:/Drone
+  <followFootstep>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!114 &3378553739367228734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -478,6 +486,13 @@ MonoBehaviour:
       Data3: 1312268987
       Data4: -1313687505
     Path: event:/Drone
+  <followFootstep>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!1001 &4050991875019828193
 PrefabInstance:
   m_ObjectHideFlags: 0

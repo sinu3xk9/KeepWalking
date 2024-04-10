@@ -17,7 +17,7 @@ public class InteractionBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player.useTick > 0 && (!player.phoneActive && !player.pepperActive))
+        if (player.useTick > 0 && player.state == "idle")
         {
             progressBarUI.SetActive(true);
             progressBarTransform.localScale = new Vector3(Mathf.Clamp(player.useTick / player.useDuration, 0, 1), 1, 1);
@@ -26,7 +26,7 @@ public class InteractionBar : MonoBehaviour
         {
             progressBarUI.SetActive(false);
         }
-        phoneText.SetActive(player.phoneActive);
-        pepperText.SetActive(player.pepperActive);
+/*        phoneText.SetActive(player.phoneActive);
+        pepperText.SetActive(player.pepperActive);*/
     }
 }
