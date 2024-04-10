@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 2786493496976048486}
-  walkSpeed: 2
+  walkSpeed: 3
   lookSpeed: 1
   lookXLimit: 45
   canLook: 1
@@ -459,6 +459,13 @@ MonoBehaviour:
       Data3: 2117871287
       Data4: -874512149
     Path: event:/Footstep_Follow
+  <trashCanFall>k__BackingField:
+    Guid:
+      Data1: 1820922561
+      Data2: 1224904988
+      Data3: -1975686271
+      Data4: -104068867
+    Path: event:/TrashCan_Falling
 --- !u!1001 &4050991875019828193
 PrefabInstance:
   m_ObjectHideFlags: 0

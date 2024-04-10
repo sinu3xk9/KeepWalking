@@ -14,6 +14,7 @@ public class FMODEvents : MonoBehaviour
 
     [field: Header("Environment Sounds")]
     [field: SerializeField] public EventReference followFootstep {get; private set;}
+    [field: SerializeField] public EventReference trashCanFall {get; private set;}
 
 
 
