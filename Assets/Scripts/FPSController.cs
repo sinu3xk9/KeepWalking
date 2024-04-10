@@ -28,6 +28,7 @@ public class FPSController : MonoBehaviour
 
     public SplineContainer spline;
     private int pointIndex;
+    private bool isPaused = false;
 
     //Player Item Use Variables
     public float useTick = 0f;
@@ -79,115 +80,110 @@ public class FPSController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        updateSplinePoint();
-        //Player Movement
-        //Waterslide ellipse edition: checks if combined distance to current and next point (ellipse math) is greater than threshold. 
-        /*if (((transform.position - splineNext).magnitude + (transform.position - splineCurrent).magnitude) > ((splineNext - splineCurrent).magnitude + movementEllipseRadius))
+        if (!isPaused)
         {
-            Debug.Log("Outisde Ellipse");
-            Debug.Log(splineCurrent.ToString());
-            Debug.Log(splineNext.ToString());
-            //if outside threshold get the point between current and next spline and move player towards that point
-            Vector3 middlePoint = splineCurrent + ((splineNext- splineCurrent)/6);
-            Debug.Log(middlePoint.ToString());
-            moveDirection += (middlePoint - transform.position);
-            moveDirection = new Vector3(moveDirection.x, 0, moveDirection.z);
-        }*/
+            updateSplinePoint();
+            //Player Movement
+            //Waterslide ellipse edition: checks if combined distance to current and next point (ellipse math) is greater than threshold. 
+            /*if (((transform.position - splineNext).magnitude + (transform.position - splineCurrent).magnitude) > ((splineNext - splineCurrent).magnitude + movementEllipseRadius))
+            {
+                Debug.Log("Outisde Ellipse");
+                Debug.Log(splineCurrent.ToString());
+                Debug.Log(splineNext.ToString());
+                //if outside threshold get the point between current and next spline and move player towards that point
+                Vector3 middlePoint = splineCurrent + ((splineNext- splineCurrent)/6);
+                Debug.Log(middlePoint.ToString());
+                moveDirection += (middlePoint - transform.position);
+                moveDirection = new Vector3(moveDirection.x, 0, moveDirection.z);
+            }*/
 
-        if (Mathf.Abs(characterController.velocity.x) > .1f || Mathf.Abs(characterController.velocity.z) > .1f)
-        {
-            playerAnimator.SetBool("IsWalking", true);
-        }
-        else {
-            playerAnimator.SetBool("IsWalking", false);
-        }
-
-        bool eDown = Input.GetKey(KeyCode.E);
-        bool qDown = Input.GetKey(KeyCode.Q);
-        switch (state)
-        {
-            case "idle":
-                //update camera rotation based on player input
-                takeCameraInput();
-                //update character mover based on player input
-                takeMovementInput();
-                //update tick counter and UI depending on held buttons
-                if (eDown && !qDown)
-                {
-                    useTick += holdTickSpeed * Time.deltaTime;
-                    phoneRadial.fillAmount = useTick / useDuration;
-                    q.color = darkGrey;
-                    e.color = lightGrey;
-                }
-                else if (!eDown && qDown)
-                {
-                    useTick += holdTickSpeed * Time.deltaTime;
-                    pepperRadial.fillAmount = useTick / useDuration;
-                    q.color = lightGrey;
-                    e.color = darkGrey;
-                }
-                else
-                {
-                    useTick = 0;
-                    phoneRadial.fillAmount = useTick / useDuration;
-                    pepperRadial.fillAmount = useTick / useDuration;
-                    q.color = darkGrey;
-                    e.color = darkGrey;
-                }
-
-                //check if any buttons complete
-                if (useTick >= useDuration)
-                {
-                    if (eDown)
+            bool eDown = Input.GetKey(KeyCode.E);
+            bool qDown = Input.GetKey(KeyCode.Q);
+            switch (state)
+            {
+                case "idle":
+                    //update camera rotation based on player input
+                    takeCameraInput();
+                    //update character mover based on player input
+                    takeMovementInput();
+                    //update tick counter and UI depending on held buttons
+                    if (eDown && !qDown)
                     {
-                        enterTextingState();
+                        useTick += holdTickSpeed * Time.deltaTime;
+                        phoneRadial.fillAmount = useTick / useDuration;
+                        q.color = darkGrey;
+                        e.color = lightGrey;
                     }
-                    else if (qDown)
+                    else if (!eDown && qDown)
                     {
-                        enterPepperState();
+                        useTick += holdTickSpeed * Time.deltaTime;
+                        pepperRadial.fillAmount = useTick / useDuration;
+                        q.color = lightGrey;
+                        e.color = darkGrey;
                     }
-                    holdingButton = true;
-                }
-                break;
-            case "texting":
-                playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
-                if (Input.GetKeyUp(KeyCode.E))
-                {
-                    holdingButton = false;
-                }
-                else if (eDown && !holdingButton)
-                {
-                    exitTextingState();
-                }
-                break;
-            case "calling":
-                //update camera rotation based on player input
-                takeCameraInput();
-                //update character mover based on player input
-                takeMovementInput();
-                if (Input.GetKeyUp(KeyCode.E))
-                {
-                    holdingButton = false;
-                }
-                else if (eDown && !holdingButton)
-                {
-                    exitCallingState();
-                }
-                break;
-            case "pepperOut":
-                //update camera rotation based on player input
-                takeCameraInput();
-                //update character mover based on player input
-                takeMovementInput();
-                if (Input.GetKeyUp(KeyCode.Q))
-                {
-                    holdingButton = false;
-                }
-                else if (qDown && !holdingButton)
-                {
-                    exitPepperState();
-                }
-                break;
+                    else
+                    {
+                        useTick = 0;
+                        phoneRadial.fillAmount = useTick / useDuration;
+                        pepperRadial.fillAmount = useTick / useDuration;
+                        q.color = darkGrey;
+                        e.color = darkGrey;
+                    }
+
+                    //check if any buttons complete
+                    if (useTick >= useDuration)
+                    {
+                        if (eDown)
+                        {
+                            enterTextingState();
+                        }
+                        else if (qDown)
+                        {
+                            enterPepperState();
+                        }
+                        holdingButton = true;
+                    }
+                    break;
+                case "texting":
+                    playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
+                    if (Input.GetKeyUp(KeyCode.E))
+                    {
+                        holdingButton = false;
+                    }
+                    else if (eDown && !holdingButton)
+                    {
+                        exitTextingState();
+                    }
+                    break;
+                case "calling":
+                    //update camera rotation based on player input
+                    takeCameraInput();
+                    //update character mover based on player input
+                    takeMovementInput();
+                    if (Input.GetKeyUp(KeyCode.E))
+                    {
+                        holdingButton = false;
+                    }
+                    else if (eDown && !holdingButton)
+                    {
+                        exitCallingState();
+                    }
+                    break;
+                case "pepperOut":
+                    //update camera rotation based on player input
+                    takeCameraInput();
+                    //update character mover based on player input
+                    takeMovementInput();
+                    if (Input.GetKeyUp(KeyCode.Q))
+                    {
+                        holdingButton = false;
+                    }
+                    else if (qDown && !holdingButton)
+                    {
+                        exitPepperState();
+                    }
+                    break;
+            }
         }
     }
     
@@ -291,6 +287,15 @@ public class FPSController : MonoBehaviour
         }
 
         characterController.Move(moveDirection * Time.deltaTime);
+
+        if (Mathf.Abs(characterController.velocity.x) > .1f || Mathf.Abs(characterController.velocity.z) > .1f)
+        {
+            playerAnimator.SetBool("IsWalking", true);
+        }
+        else
+        {
+            playerAnimator.SetBool("IsWalking", false);
+        }
     }
 
     private void updateSplinePoint()
@@ -306,6 +311,22 @@ public class FPSController : MonoBehaviour
                 splinePrev = splineCurrent;
             }
             //Debug.Log(pointIndex);
+        }
+    }
+
+    public void togglePause()
+    {
+        isPaused = !isPaused;
+        if (isPaused)
+        {
+            playerAnimator.SetBool("IsWalking", false);
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        else
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }
