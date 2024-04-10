@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class PauseMenuController : MonoBehaviour
 {
-    GameObject pauseMenu;
+    public GameObject pauseMenu;
+    public FPSController playerController;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            pauseMenu.SetActive(true);
+            pauseMenu.SetActive(!pauseMenu.activeSelf);
+            playerController.togglePause();
         }
     }
 }
