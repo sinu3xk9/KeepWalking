@@ -11,8 +11,6 @@ public class SceneControllerScript : MonoBehaviour
         
     }
 
-    /*
-
     // Update is called once per frame
     void Update()
     {
@@ -22,17 +20,6 @@ public class SceneControllerScript : MonoBehaviour
             {
                 Debug.Log("quitting whole game");
                 Application.Quit();
-            }
-            else if(SceneManager.GetActiveScene().name == "GameScene")
-            {
-                if (Time.timeScale == 1)
-                {
-                    Time.timeScale = 0f; // Pause the game
-                }
-                else
-                {
-                    Time.timeScale = 1f; // Resume the game
-                }
             }
             else
             {
@@ -50,5 +37,4 @@ public class SceneControllerScript : MonoBehaviour
     {
         Application.Quit();
     }
-    */
 }

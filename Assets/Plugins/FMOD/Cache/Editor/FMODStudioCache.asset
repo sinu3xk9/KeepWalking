@@ -42,9 +42,36 @@ MonoBehaviour:
   Path: FMOD/Desktop/Main.bank
   Name: Main
   StudioPath: bank:/Main
-  lastModified: 638477620626804755
+  lastModified: 638481109917994504
   FileSizes: []
   Exists: 1
+--- !u!114 &-189582735000847718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Footstep_Follow
+  m_EditorClassIdentifier: 
+  Path: event:/Footstep_Follow
+  Guid:
+    Data1: 1231574933
+    Data2: 1190754520
+    Data3: 2117871287
+    Data4: -874512149
+  Banks:
+  - {fileID: -6868266648890331173}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,12 +90,13 @@ MonoBehaviour:
   EditorEvents:
   - {fileID: -9071270373197873807}
   - {fileID: 9199762997394982579}
+  - {fileID: -189582735000847718}
   EditorParameters: []
   MasterBanks:
   - {fileID: -6868266648890331173}
   StringsBanks:
   - {fileID: 7708636386378017104}
-  cacheTime: 638477620626814735
+  cacheTime: 638481109918034671
   cacheVersion: 131616
 --- !u!114 &7708636386378017104
 MonoBehaviour:
@@ -85,10 +113,10 @@ MonoBehaviour:
   Path: FMOD/Desktop/Main.strings.bank
   Name: Main.strings
   StudioPath: bank:/Main.strings
-  lastModified: 638477620626814735
+  lastModified: 638481109918034671
   FileSizes:
   - Name: 
-    Value: 810
+    Value: 860
   Exists: 1
 --- !u!114 &9199762997394982579
 MonoBehaviour:
