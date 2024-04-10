@@ -239,7 +239,7 @@ MonoBehaviour:
   canLook: 1
   spline: {fileID: 0}
   useTick: 0
-  holdTickSpeed: 150
+  holdTickSpeed: 250
   useDuration: 400
   armAnimator: {fileID: 8380217524618379979}
   pepperAnimator: {fileID: 6148639878726612606}
