@@ -115,11 +115,6 @@ public class FPSController : MonoBehaviour
                 if (eDown && !qDown)
                 {
                     useTick += holdTickSpeed * Time.deltaTime;
-                    Debug.Log("tests start");
-                    Debug.Log(holdTickSpeed * Time.deltaTime);
-                    Debug.Log(Time.deltaTime);
-                    Debug.Log(holdTickSpeed);
-                    Debug.Log(useTick);
                     phoneRadial.fillAmount = useTick / useDuration;
                     q.color = darkGrey;
                     e.color = lightGrey;
