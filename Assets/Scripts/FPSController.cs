@@ -275,19 +275,19 @@ public class FPSController : MonoBehaviour
         moveDirection = Vector3.zero;
         if (Input.GetKey(KeyCode.W))
         {
-            moveDirection += (transform.TransformDirection(Vector3.forward) * lookSpeed);
+            moveDirection += (transform.TransformDirection(Vector3.forward) * walkSpeed);
         }
         if (Input.GetKey(KeyCode.A))
         {
-            moveDirection += (transform.TransformDirection(Vector3.left) * lookSpeed);
+            moveDirection += (transform.TransformDirection(Vector3.left) * walkSpeed);
         }
         if (Input.GetKey(KeyCode.D))
         {
-            moveDirection += (transform.TransformDirection(Vector3.right) * lookSpeed);
+            moveDirection += (transform.TransformDirection(Vector3.right) * walkSpeed);
         }
         if (Input.GetKey(KeyCode.S))
         {
-            moveDirection += (transform.TransformDirection(Vector3.back) * lookSpeed);
+            moveDirection += (transform.TransformDirection(Vector3.back) * walkSpeed);
         }
 
         characterController.Move(moveDirection * Time.deltaTime);

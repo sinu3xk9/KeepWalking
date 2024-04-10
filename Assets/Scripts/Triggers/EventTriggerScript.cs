@@ -15,6 +15,9 @@ public class EventTriggerScript : MonoBehaviour
             foreach(Animator animator in eventAnimators)
             {
                 animator.SetTrigger("EventTrigger");
+                if(this.name.Equals("TrashcanTriggerBox")) {
+                    AudioManager.instance.PlayOneShot(FMODEvents.instance.trashCanFall, this.transform.position);
+                }
             }
         }
     }
