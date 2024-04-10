@@ -42,9 +42,36 @@ MonoBehaviour:
   Path: FMOD/Desktop/Main.bank
   Name: Main
   StudioPath: bank:/Main
-  lastModified: 638482953187213719
+  lastModified: 638483008055638153
   FileSizes: []
   Exists: 1
+--- !u!114 &-4031470475914266971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/TrashCan_Falling
+  m_EditorClassIdentifier: 
+  Path: event:/TrashCan_Falling
+  Guid:
+    Data1: 1820922561
+    Data2: 1224904988
+    Data3: -1975686271
+    Data4: -104068867
+  Banks:
+  - {fileID: -6868266648890331173}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
 --- !u!114 &-189582735000847718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,12 +118,13 @@ MonoBehaviour:
   - {fileID: -9071270373197873807}
   - {fileID: 9199762997394982579}
   - {fileID: -189582735000847718}
+  - {fileID: -4031470475914266971}
   EditorParameters: []
   MasterBanks:
   - {fileID: -6868266648890331173}
   StringsBanks:
   - {fileID: 7708636386378017104}
-  cacheTime: 638482953187213719
+  cacheTime: 638483008055658147
   cacheVersion: 131616
 --- !u!114 &7708636386378017104
 MonoBehaviour:
@@ -113,10 +141,10 @@ MonoBehaviour:
   Path: FMOD/Desktop/Main.strings.bank
   Name: Main.strings
   StudioPath: bank:/Main.strings
-  lastModified: 638482953187213719
+  lastModified: 638483008055658147
   FileSizes:
   - Name: 
-    Value: 860
+    Value: 906
   Exists: 1
 --- !u!114 &9199762997394982579
 MonoBehaviour:
