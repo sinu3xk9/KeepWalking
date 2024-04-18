@@ -7,6 +7,7 @@ using FMODUnity;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.TextCore.Text;
+using UnityEngine.Rendering.PostProcessing;
 
 [RequireComponent(typeof(CharacterController))]
 [RequireComponent(typeof(Animator))]
@@ -55,6 +56,7 @@ public class FPSController : MonoBehaviour
     public TextMeshProUGUI e;
     private Color darkGrey = new Color(0.32f, 0.32f, 0.32f, 256);
     private Color lightGrey = new Color(0.71f, 0.71f, 0.71f, 256);
+    private PostProcessVolume postProcessVolume;
 
     // Audio
     [Header("Audio")]
@@ -73,9 +75,9 @@ public class FPSController : MonoBehaviour
         playerAnimator = GetComponent<Animator>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-
         //transform.position = spline.Spline[pointIndex].Position;
         splinePrev = spline.Spline[pointIndex].Position;
+        postProcessVolume = transform.Find("PostProcessVolume").GetComponent<PostProcessVolume>();
     }
 
     // Update is called once per frame
@@ -86,17 +88,15 @@ public class FPSController : MonoBehaviour
             updateSplinePoint();
             //Player Movement
             //Waterslide ellipse edition: checks if combined distance to current and next point (ellipse math) is greater than threshold. 
-            /*if (((transform.position - splineNext).magnitude + (transform.position - splineCurrent).magnitude) > ((splineNext - splineCurrent).magnitude + movementEllipseRadius))
+            if (((transform.position - splineNext).magnitude + (transform.position - splineCurrent).magnitude) > ((splineNext - splineCurrent).magnitude + movementEllipseRadius))
             {
                 Debug.Log("Outisde Ellipse");
                 Debug.Log(splineCurrent.ToString());
                 Debug.Log(splineNext.ToString());
                 //if outside threshold get the point between current and next spline and move player towards that point
-                Vector3 middlePoint = splineCurrent + ((splineNext- splineCurrent)/6);
+                Vector3 middlePoint = splineCurrent + ((splineNext - splineCurrent) / 6);
                 Debug.Log(middlePoint.ToString());
-                moveDirection += (middlePoint - transform.position);
-                moveDirection = new Vector3(moveDirection.x, 0, moveDirection.z);
-            }*/
+            }
 
             bool eDown = Input.GetKey(KeyCode.E);
             bool qDown = Input.GetKey(KeyCode.Q);
