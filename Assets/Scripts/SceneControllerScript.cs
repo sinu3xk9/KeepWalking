@@ -5,35 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class SceneControllerScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    // Update is called once per frame
+    void Update()
     {
         if (SceneManager.GetActiveScene().name == "MainMenu")
         {
             Cursor.visible = true;
-        }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (SceneManager.GetActiveScene().name == "MainMenu")
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                Debug.Log("quitting whole game");
                 Application.Quit();
             }
-            else
-            {
-                getSceneAtIndex(0);
-            }
         }
     }
 
-    public void getSceneAtIndex(int index)
+    public void getSceneFromName(string sceneName)
     {
-        SceneManager.LoadScene(index);
+        SceneManager.LoadScene(sceneName);
     } 
 
     public void quitGame()
