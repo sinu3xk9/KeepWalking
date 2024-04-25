@@ -7,13 +7,11 @@ using UnityEngine.UIElements;
 public class EventTriggerScript : MonoBehaviour
 {
     public List<Animator> eventAnimators;
-    private bool eventPlayed = false;
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") && !eventPlayed)
+        if (other.gameObject.CompareTag("Player"))
         {
-            eventPlayed = true;
             foreach(Animator animator in eventAnimators)
             {
                 animator.SetTrigger("EventTrigger");
