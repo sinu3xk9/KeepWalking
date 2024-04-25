@@ -133,24 +133,13 @@ public class FPSController : MonoBehaviour
                     {
                         if (eDown)
                         {
-                            enterTextingState();
+                            enterCallingState();
                         }
                         else if (qDown)
                         {
                             enterPepperState();
                         }
                         holdingButton = true;
-                    }
-                    break;
-                case "texting":
-                    playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
-                    if (Input.GetKeyUp(KeyCode.E))
-                    {
-                        holdingButton = false;
-                    }
-                    else if (eDown && !holdingButton)
-                    {
-                        exitTextingState();
                     }
                     break;
                 case "calling":
@@ -206,22 +195,6 @@ public class FPSController : MonoBehaviour
         soundPosition -= feetDifferential;
         yield return new WaitForSeconds(.5f);
         AudioManager.instance.PlayOneShot(FMODEvents.instance.followFootstep, soundPosition);
-    }
-
-    private void enterTextingState()
-    {
-        moveDirection = Vector3.zero;
-        armAnimator.SetTrigger("TakeOutPhone");
-        playerAnimator.SetBool("IsWalking", false);
-        state = "texting";
-    }
-    private void exitTextingState()
-    {
-        armAnimator.SetTrigger("PutAwayPhone");
-        e.color = darkGrey;
-        phoneRadial.fillAmount = 0;
-        useTick = 0;
-        state = "idle";
     }
 
     private void enterCallingState()
