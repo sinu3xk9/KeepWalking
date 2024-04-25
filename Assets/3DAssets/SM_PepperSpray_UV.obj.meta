@@ -3,12 +3,7 @@ guid: 20007aa947d309e4b97a2b01e1efb78c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: sm_pepperspray_MeshMat
-    second: {fileID: 2100000, guid: 5c5e9fa425b8c5244b833220dae75d98, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
