@@ -30265,6 +30265,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3849542986861326255, guid: ad7377339c4536e4a8cccc6f7975429e, type: 3}
+      propertyPath: eventAudio.Path
+      value: event:/TrashCan_Falling
+      objectReference: {fileID: 0}
+    - target: {fileID: 3849542986861326255, guid: ad7377339c4536e4a8cccc6f7975429e, type: 3}
+      propertyPath: eventAudio.Guid.Data1
+      value: 1820922561
+      objectReference: {fileID: 0}
+    - target: {fileID: 3849542986861326255, guid: ad7377339c4536e4a8cccc6f7975429e, type: 3}
+      propertyPath: eventAudio.Guid.Data2
+      value: 1224904988
+      objectReference: {fileID: 0}
+    - target: {fileID: 3849542986861326255, guid: ad7377339c4536e4a8cccc6f7975429e, type: 3}
+      propertyPath: eventAudio.Guid.Data3
+      value: -1975686271
+      objectReference: {fileID: 0}
+    - target: {fileID: 3849542986861326255, guid: ad7377339c4536e4a8cccc6f7975429e, type: 3}
+      propertyPath: eventAudio.Guid.Data4
+      value: -104068867
+      objectReference: {fileID: 0}
     - target: {fileID: 3959960155670891301, guid: ad7377339c4536e4a8cccc6f7975429e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.0899963
