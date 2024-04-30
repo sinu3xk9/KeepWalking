@@ -230,6 +230,7 @@ GameObject:
   - component: {fileID: 73091056248529324}
   - component: {fileID: 8704819092791969862}
   - component: {fileID: 7127998600411357953}
+  - component: {fileID: 2875887525628984966}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -299,6 +300,7 @@ MonoBehaviour:
   lookXLimit: 45
   canLook: 1
   spline: {fileID: 0}
+  isPaused: 0
   useTick: 0
   holdTickSpeed: 250
   useDuration: 400
@@ -359,6 +361,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2875887525628984966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572939192513194903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a285c4670d768f458d2310314cbe7da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  touchingSafeZones: []
+  processVolume: {fileID: 0}
 --- !u!1 &1882394723287814145
 GameObject:
   m_ObjectHideFlags: 0
