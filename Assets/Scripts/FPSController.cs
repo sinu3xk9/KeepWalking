@@ -45,6 +45,10 @@ public class FPSController : MonoBehaviour
     //Bool that allows the player to hold a button passed when the state changes. Once the button is released they can then hit again to deactivate state
     private bool holdingButton = false;
 
+    public ParticleSystem shootParticles;
+    public ParticleSystem dudParticles;
+    private bool hasAmmo = true;
+
 
 
     // UI 
@@ -165,6 +169,10 @@ public class FPSController : MonoBehaviour
                     {
                         holdingButton = false;
                     }
+                    else if (Input.GetMouseButtonDown(0))
+                    {
+                        shootPepperSpray();
+                    }
                     else if (qDown && !holdingButton)
                     {
                         exitPepperState();
@@ -223,6 +231,19 @@ public class FPSController : MonoBehaviour
         pepperRadial.fillAmount = 0;
         useTick = 0;
         state = "idle";
+    }
+
+    private void shootPepperSpray()
+    {
+        if (hasAmmo)
+        {
+            shootParticles.Play();
+            hasAmmo = false;
+        }
+        else
+        {
+            dudParticles.Play();
+        }
     }
 
     private void takeCameraInput()
