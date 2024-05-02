@@ -69,9 +69,63 @@ MonoBehaviour:
   Path: FMOD/Desktop/Main.bank
   Name: Main
   StudioPath: bank:/Main
-  lastModified: 638496025958803472
+  lastModified: 638502607660180958
   FileSizes: []
   Exists: 1
+--- !u!114 &-2309920720511927724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PhoneCall
+  m_EditorClassIdentifier: 
+  Path: event:/PhoneCall
+  Guid:
+    Data1: -1153902429
+    Data2: 1298560469
+    Data3: -989037139
+    Data4: -1330653866
+  Banks:
+  - {fileID: -6868266648890331173}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 29500
+--- !u!114 &-282554238432395648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/DogBark
+  m_EditorClassIdentifier: 
+  Path: event:/DogBark
+  Guid:
+    Data1: 1545108356
+    Data2: 1294058191
+    Data3: -1171465564
+    Data4: 2003363210
+  Banks:
+  - {fileID: -6868266648890331173}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6500
 --- !u!114 &-189582735000847718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,13 +173,44 @@ MonoBehaviour:
   - {fileID: 9199762997394982579}
   - {fileID: -189582735000847718}
   - {fileID: -9154168739130268869}
+  - {fileID: -282554238432395648}
+  - {fileID: -2309920720511927724}
+  - {fileID: 9071151346997781938}
+  - {fileID: 4863822142951301225}
   EditorParameters: []
   MasterBanks:
   - {fileID: -6868266648890331173}
   StringsBanks:
   - {fileID: 7708636386378017104}
-  cacheTime: 638496025958813477
+  cacheTime: 638502607660200971
   cacheVersion: 131616
+--- !u!114 &4863822142951301225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/GlassShatter
+  m_EditorClassIdentifier: 
+  Path: event:/GlassShatter
+  Guid:
+    Data1: 1250485983
+    Data2: 1327632348
+    Data3: -337873280
+    Data4: -438928306
+  Banks:
+  - {fileID: -6868266648890331173}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1952
 --- !u!114 &7708636386378017104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,11 +226,38 @@ MonoBehaviour:
   Path: FMOD/Desktop/Main.strings.bank
   Name: Main.strings
   StudioPath: bank:/Main.strings
-  lastModified: 638496025958813477
+  lastModified: 638502607660200971
   FileSizes:
   - Name: 
-    Value: 906
+    Value: 1078
   Exists: 1
+--- !u!114 &9071151346997781938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Argument
+  m_EditorClassIdentifier: 
+  Path: event:/Argument
+  Guid:
+    Data1: -2057410600
+    Data2: 1267623442
+    Data3: 635986607
+    Data4: -1405738015
+  Banks:
+  - {fileID: -6868266648890331173}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8672
 --- !u!114 &9199762997394982579
 MonoBehaviour:
   m_ObjectHideFlags: 0

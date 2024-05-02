@@ -4310,11 +4310,11 @@ MonoBehaviour:
   comment: Phone call ring/audio triggered, E automatically triggered
   eventAudio:
     Guid:
-      Data1: 1820922561
-      Data2: 1224904988
-      Data3: -1975686271
-      Data4: -104068867
-    Path: event:/TrashCan_Falling
+      Data1: 1250485983
+      Data2: 1327632348
+      Data3: -337873280
+      Data4: -438928306
+    Path: event:/GlassShatter
 --- !u!65 &265482293
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9020,11 +9020,11 @@ MonoBehaviour:
   comment: Phone call ring/audio triggered, E automatically triggered
   eventAudio:
     Guid:
-      Data1: 1820922561
-      Data2: 1224904988
-      Data3: -1975686271
-      Data4: -104068867
-    Path: event:/TrashCan_Falling
+      Data1: 1545108356
+      Data2: 1294058191
+      Data3: -1171465564
+      Data4: 2003363210
+    Path: event:/DogBark
 --- !u!65 &578631953
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19509,11 +19509,11 @@ MonoBehaviour:
   comment: Phone call ring/audio triggered, E automatically triggered
   eventAudio:
     Guid:
-      Data1: 1820922561
-      Data2: 1224904988
-      Data3: -1975686271
-      Data4: -104068867
-    Path: event:/TrashCan_Falling
+      Data1: -1153902429
+      Data2: 1298560469
+      Data3: -989037139
+      Data4: -1330653866
+    Path: event:/PhoneCall
 --- !u!65 &1329689919
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26606,11 +26606,11 @@ MonoBehaviour:
   comment: Argument sounds, originating from "apartment" with point light.
   eventAudio:
     Guid:
-      Data1: 1820922561
-      Data2: 1224904988
-      Data3: -1975686271
-      Data4: -104068867
-    Path: event:/TrashCan_Falling
+      Data1: -2057410600
+      Data2: 1267623442
+      Data3: 635986607
+      Data4: -1405738015
+    Path: event:/Argument
 --- !u!65 &1804954800
 BoxCollider:
   m_ObjectHideFlags: 0
