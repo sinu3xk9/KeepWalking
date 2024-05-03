@@ -90,7 +90,7 @@ public class FPSController : MonoBehaviour
             updateSplinePoint();
             //Player Movement
             //Waterslide ellipse edition: checks if combined distance to current and next point (ellipse math) is greater than threshold. 
-            if (((transform.position - splineNext).magnitude + (transform.position - splineCurrent).magnitude) > ((splineNext - splineCurrent).magnitude + movementEllipseRadius))
+            /*if (((transform.position - splineNext).magnitude + (transform.position - splineCurrent).magnitude) > ((splineNext - splineCurrent).magnitude + movementEllipseRadius))
             {
                 Debug.Log("Outisde Ellipse");
                 Debug.Log(splineCurrent.ToString());
@@ -98,7 +98,7 @@ public class FPSController : MonoBehaviour
                 //if outside threshold get the point between current and next spline and move player towards that point
                 Vector3 middlePoint = splineCurrent + ((splineNext - splineCurrent) / 6);
                 Debug.Log(middlePoint.ToString());
-            }
+            }*/
 
             bool eDown = Input.GetKey(KeyCode.E);
             bool qDown = Input.GetKey(KeyCode.Q);
@@ -138,7 +138,7 @@ public class FPSController : MonoBehaviour
                     {
                         if (eDown)
                         {
-                            enterReceivingState();
+                            enterCallingState();
                         }
                         else if (qDown)
                         {
@@ -152,18 +152,32 @@ public class FPSController : MonoBehaviour
                     takeCameraInput();
                     //update character mover based on player input
                     takeMovementInput();
+
                     if (Input.GetKeyUp(KeyCode.E))
                     {
                         holdingButton = false;
                     }
-                    else if (Input.GetMouseButtonDown(0))
+
+                    if (phoneRinging)
                     {
-                        exitAnswerReceivingState();
-                        enterCallingState();
+                        if (Input.GetMouseButtonDown(0))
+                        {
+                            phoneRinging = false;
+                            //exitAnswerReceivingState();
+                            enterCallingState();
+                        }
+                        if (Input.GetMouseButtonDown(1))
+                        {
+                            phoneRinging = false;
+                            //exitDeclineReceivingState();
+                        }
                     }
-                    else if (eDown && !holdingButton)
+                    else
                     {
-                        exitDeclineReceivingState();
+                        if (eDown && !holdingButton)
+                        {
+                            //exitDeclineReceivingState();
+                        }
                     }
                     break;
                 case "calling":
@@ -225,33 +239,34 @@ public class FPSController : MonoBehaviour
         AudioManager.instance.PlayOneShot(FMODEvents.instance.followFootstep, soundPosition);
     }
 
-    private void enterReceivingState()
+/*    private void enterReceivingState()
     {
         armAnimator.SetTrigger("Answer Call");
         state = "receiving";
-    }
-    private void exitAnswerReceivingState()
+    }*/
+/*    private void exitAnswerReceivingState()
     {
         armAnimator.SetTrigger("Pick Up Call");
         state = "calling";
-    }
+    }*/
 
-    private void exitDeclineReceivingState()
+/*    private void exitDeclineReceivingState()
     {
         armAnimator.SetTrigger("Decline Call");
         q.color = darkGrey;
         phoneRadial.fillAmount = 0;
         useTick = 0;
         state = "idle";
-    }
+    }*/
 
     private void enterCallingState()
     {
+        armAnimator.SetTrigger("TakeOutPhone");
         state = "calling";
     }
     private void exitCallingState()
     {
-        armAnimator.SetTrigger("End Call");
+        armAnimator.SetTrigger("PutAwayPhone");
         q.color = darkGrey;
         phoneRadial.fillAmount = 0;
         useTick = 0;

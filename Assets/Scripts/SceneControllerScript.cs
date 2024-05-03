@@ -11,6 +11,7 @@ public class SceneControllerScript : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "MainMenu")
         {
             Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 Application.Quit();
@@ -20,6 +21,11 @@ public class SceneControllerScript : MonoBehaviour
 
     public void getSceneFromName(string sceneName)
     {
+        if (sceneName == "GameScene")
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
         SceneManager.LoadScene(sceneName);
     } 
 
