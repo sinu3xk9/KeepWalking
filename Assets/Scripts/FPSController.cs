@@ -40,11 +40,12 @@ public class FPSController : MonoBehaviour
     private float movementEllipseRadius = 2f;
     public Animator armAnimator;
     public Animator pepperAnimator;
-    //States: idle, texting, calling, pepperOut
+    //States: idle, receiving, calling, pepperOut
     public string state = "idle";
     //Bool that allows the player to hold a button passed when the state changes. Once the button is released they can then hit again to deactivate state
     private bool holdingButton = false;
 
+    private bool phoneRinging = false;
     public ParticleSystem shootParticles;
     public ParticleSystem dudParticles;
     private bool hasAmmo = true;
@@ -137,13 +138,32 @@ public class FPSController : MonoBehaviour
                     {
                         if (eDown)
                         {
-                            enterCallingState();
+                            enterReceivingState();
                         }
                         else if (qDown)
                         {
                             enterPepperState();
                         }
                         holdingButton = true;
+                    }
+                    break;
+                case "receiving":
+                    //update camera rotation based on player input
+                    takeCameraInput();
+                    //update character mover based on player input
+                    takeMovementInput();
+                    if (Input.GetKeyUp(KeyCode.E))
+                    {
+                        holdingButton = false;
+                    }
+                    else if (Input.GetMouseButtonDown(0))
+                    {
+                        exitAnswerReceivingState();
+                        enterCallingState();
+                    }
+                    else if (eDown && !holdingButton)
+                    {
+                        exitDeclineReceivingState();
                     }
                     break;
                 case "calling":
@@ -205,16 +225,35 @@ public class FPSController : MonoBehaviour
         AudioManager.instance.PlayOneShot(FMODEvents.instance.followFootstep, soundPosition);
     }
 
+    private void enterReceivingState()
+    {
+        armAnimator.SetTrigger("Answer Call");
+        state = "receiving";
+    }
+    private void exitAnswerReceivingState()
+    {
+        armAnimator.SetTrigger("Pick Up Call");
+        state = "calling";
+    }
+
+    private void exitDeclineReceivingState()
+    {
+        armAnimator.SetTrigger("Decline Call");
+        q.color = darkGrey;
+        phoneRadial.fillAmount = 0;
+        useTick = 0;
+        state = "idle";
+    }
+
     private void enterCallingState()
     {
-        armAnimator.SetTrigger("TakeOutPhone");
         state = "calling";
     }
     private void exitCallingState()
     {
-        armAnimator.SetTrigger("PutAwayPhone");
+        armAnimator.SetTrigger("End Call");
         q.color = darkGrey;
-        pepperRadial.fillAmount = 0;
+        phoneRadial.fillAmount = 0;
         useTick = 0;
         state = "idle";
     }
@@ -320,5 +359,10 @@ public class FPSController : MonoBehaviour
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
+    }
+
+    public void setPhoneRinging(bool newState)
+    {
+        phoneRinging = newState;
     }
 }
